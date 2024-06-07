@@ -26,7 +26,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
     private _observer: MutationObserver;
 
     static override readonly template = html`
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar" id="sidebar" collapsed="true">
             <button class="toggle-button" id="toggle-button"></button>
             <slot class="sidebar-content" id="sidebar-content"></slot>
         </div>
@@ -80,7 +80,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
         }
 
         .sidebar-content {
-            opacity: 1;
+            opacity: 0;
             transition: opacity 0.3s;
             display: flex;
             flex-direction: column;
@@ -128,7 +128,6 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
 
     private _initSideBar() {
         this._sidebar.style.backgroundColor = this.sidebarBackgroundColor;
-        this._sidebar.style.width = this.sidebarWidth + "px";
         this._sidebar.style.maxWidth = this.sidebarWidth + "px";
         this._toggleButton.style.backgroundColor = this.toggleButtonBackgroundColor;
         this._toggleButton.style.top = "calc(" + this.sidebarToggleButtonTopPosition + "% - 25px)";
@@ -145,13 +144,27 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
         if (this.sidebarPosition === "left") {
             this._sidebar.style.left = "0px";
             this._toggleButton.style.transform = "translateX(-50%)";
-            this._toggleButton.style.left = (parseInt(this.sidebarWidth) + 20).toString() + "px";
+            if (this._sidebar.getAttribute("collapsed") === "true") {
+                this._sidebar.style.width = "0px";
+                this._toggleButton.style.left = "20px";
+                this._sidebarContent.style.opacity = '0';
+            } else {
+                this._sidebar.style.width = this.sidebarWidth + "px";
+                this._toggleButton.style.left = (parseInt(this.sidebarWidth) + 20).toString() + "px";
+            }
             this._sidebar.style.borderRadius = "0px 10px 10px 0px";
             this._toggleButton.style.borderRadius = "0px 10px 10px 0px";
         } else if (this.sidebarPosition === "right") {
             this._sidebar.style.right = "0px";
             this._toggleButton.style.transform = "translateX(50%)";
-            this._toggleButton.style.right = (parseInt(this.sidebarWidth) + 20).toString() + "px";
+            if (this._sidebar.getAttribute("collapsed") === "true") {
+                this._sidebar.style.width = "0px";
+                this._toggleButton.style.right = "20px";
+                this._sidebarContent.style.opacity = '0';
+            } else {
+                this._sidebar.style.width = this.sidebarWidth + "px";
+                this._toggleButton.style.right = (parseInt(this.sidebarWidth) + 20).toString() + "px";
+            }
             this._sidebar.style.borderRadius = "10px 0px 0px 10px";
             this._toggleButton.style.borderRadius = "10px 0px 0px 10px";
         }
