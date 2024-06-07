@@ -1,0 +1,58 @@
+{
+    "schemaVersion": "1.0.0",
+    "readme": "README.md",
+    "modules": [
+        {
+            "kind": "javascript-module",
+            "path": "dist/slider/AutomaticSliderShowWebcomponent.js",
+            "declarations": [
+                {
+                    "kind": "class",
+                    "description": "A web component for an automatic slider show",
+                    "name": "AutomaticSliderShowWebcomponent",
+                    "members": [
+                        {
+                            "kind": "property",
+                            "name": "slideIndex",
+                            "type": {
+                                "text": "number"
+                            }
+                        },
+                        {
+                            "kind": "property",
+                            "name": "interval",
+                            "type": {
+                                "text": "number"
+                            }
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "slide-index",
+                            "fieldName": "slideIndex"
+                        },
+                        {
+                            "name": "interval",
+                            "fieldName": "interval"
+                        }
+                    ],
+                    "superclass": {
+                        "name": "BaseCustomWebComponentConstructorAppend"
+                    },
+                    "tagName": "node-projects-slidershow",
+                    "customElement": true
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "custom-element-definition",
+                    "name": "node-projects-slidershow",
+                    "declaration": {
+                        "name": "AutomaticSliderShowWebcomponent",
+                        "module": "dist/slider/AutomaticSliderShowWebcomponent.js"
+                    }
+                }
+            ]
+        }
+    ]
+}
