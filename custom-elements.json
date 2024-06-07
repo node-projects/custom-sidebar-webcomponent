@@ -4,52 +4,96 @@
     "modules": [
         {
             "kind": "javascript-module",
-            "path": "dist/slider/AutomaticSliderShowWebcomponent.js",
+            "path": "dist/sidebar/CustomSidebarWebcomponent.js",
             "declarations": [
                 {
                     "kind": "class",
                     "description": "A web component for an automatic slider show",
-                    "name": "AutomaticSliderShowWebcomponent",
+                    "name": "CustomSidebarWebcomponent",
                     "members": [
                         {
                             "kind": "property",
-                            "name": "slideIndex",
+                            "name": "sidebarWidth",
                             "type": {
-                                "text": "number"
+                                "text": "string"
                             }
                         },
                         {
                             "kind": "property",
-                            "name": "interval",
+                            "name": "sidebarBackgroundColor",
                             "type": {
-                                "text": "number"
+                                "text": "string"
+                            }
+                        },
+                        {
+                            "kind": "property",
+                            "name": "toggleButtonBackgroundColor",
+                            "type": {
+                                "text": "string"
+                            }
+                        },
+                        {
+                            "kind": "property",
+                            "name": "toggleButtonColor",
+                            "type": {
+                                "text": "string"
+                            }
+                        },
+                        {
+                            "kind": "property",
+                            "name": "sidebarPosition",
+                            "type": {
+                                "text": "string"
+                            }
+                        },
+                        {
+                            "kind": "property",
+                            "name": "sidebarToggleButtonTopPosition",
+                            "type": {
+                                "text": "string"
                             }
                         }
                     ],
                     "attributes": [
                         {
-                            "name": "slide-index",
-                            "fieldName": "slideIndex"
+                            "name": "sidebar-width",
+                            "fieldName": "sidebarWidth"
                         },
                         {
-                            "name": "interval",
-                            "fieldName": "interval"
+                            "name": "sidebar-background-color",
+                            "fieldName": "sidebarBackgroundColor"
+                        },
+                        {
+                            "name": "toggle-button-background-color",
+                            "fieldName": "toggleButtonBackgroundColor"
+                        },
+                        {
+                            "name": "toggle-button-color",
+                            "fieldName": "toggleButtonColor"
+                        },
+                        {
+                            "name": "sidebar-position",
+                            "fieldName": "sidebarPosition"
+                        },
+                        {
+                            "name": "sidebar-toggle-button-top-position",
+                            "fieldName": "sidebarToggleButtonTopPosition"
                         }
                     ],
                     "superclass": {
                         "name": "BaseCustomWebComponentConstructorAppend"
                     },
-                    "tagName": "node-projects-slidershow",
+                    "tagName": "node-projects-sidebar",
                     "customElement": true
                 }
             ],
             "exports": [
                 {
                     "kind": "custom-element-definition",
-                    "name": "node-projects-slidershow",
+                    "name": "node-projects-sidebar",
                     "declaration": {
-                        "name": "AutomaticSliderShowWebcomponent",
-                        "module": "dist/slider/AutomaticSliderShowWebcomponent.js"
+                        "name": "CustomSidebarWebcomponent",
+                        "module": "dist/sidebar/CustomSidebarWebcomponent.js"
                     }
                 }
             ]

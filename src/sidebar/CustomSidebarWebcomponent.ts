@@ -89,7 +89,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
         }
     `;
 
-    static readonly is = 'custom-sidebar-webcomponent';
+    static readonly is = 'node-projects-sidebar';
 
     static readonly properties = {
 
