@@ -1,6 +1,6 @@
 # custom-sidebar-webcomponent
 
-[![Published on npm](https://img.shields.io/npm/v/@node-projects/automatic-slidershow-webcomponent.svg?logo=npm)](https://www.npmjs.com/package/@node-projects/custom-sidebar-webcomponent)
+[![Published on npm](https://img.shields.io/npm/v/@node-projects/custom-sidebar-webcomponent.svg?logo=npm)](https://www.npmjs.com/package/@node-projects/custom-sidebar-webcomponent)
  
 # description
 a fully customable sidebar webcomponent...
