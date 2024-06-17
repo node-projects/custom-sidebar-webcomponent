@@ -6,16 +6,10 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
     public sidebarWidth = "300";
 
     @property(String)
-    public sidebarBackgroundColor = "lightgrey";
-
-    @property(String)
-    public toggleButtonBackgroundColor = "lightgrey";
-
-    @property(String)
-    public toggleButtonColor: "black" | "white" = "black";
-
-    @property(String)
     public sidebarPosition: "left" | "right" = "right";
+
+    @property(String)
+    public toggleButtonColor: "black" | "white" = "white";
 
     @property(String)
     public sidebarToggleButtonTopPosition = "25";
@@ -26,9 +20,9 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
     private _observer: MutationObserver;
 
     static override readonly template = html`
-        <div class="sidebar" id="sidebar" collapsed="true">
-            <button class="toggle-button" id="toggle-button"></button>
-            <slot class="sidebar-content" id="sidebar-content"></slot>
+        <div class="sidebar" id="sidebar" collapsed="true" part="sidebar">
+            <button class="toggle-button" id="toggle-button" part="toggle-button"></button>
+            <slot class="sidebar-content" id="sidebar-content" part="slot-element"></slot>
         </div>
     `;
 
@@ -46,7 +40,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
         .sidebar {
             border: none;
             border-radius: 10px 0px 0px 10px;
-            background-color: #7f8c8d;
+            background-color: lightgray;
             position: fixed;
             top: 0px;
             right: 0px;
@@ -57,6 +51,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
         }
 
         .toggle-button {
+            background-color: lightgray;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,7 +60,7 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
             width: 40px;
             height: 50px;
             padding: 0px;
-            color: white;
+            color: black;
             border: none;
             border-radius: 10px 0px 0px 10px;
             cursor: pointer;
@@ -127,20 +122,9 @@ export class CustomSidebarWebcomponent extends BaseCustomWebComponentConstructor
     }
 
     private _initSideBar() {
-        this._sidebar.style.backgroundColor = this.sidebarBackgroundColor;
         this._sidebar.style.maxWidth = this.sidebarWidth + "px";
-        this._toggleButton.style.backgroundColor = this.toggleButtonBackgroundColor;
         this._toggleButton.style.top = "calc(" + this.sidebarToggleButtonTopPosition + "% - 25px)";
-
-        const svg = document.createElement("img");
-        svg.id = "toggle-svg";
-        if (this.toggleButtonColor === "black") {
-            svg.src = "../../assets/sidebarToggleDark.svg";
-        } else {
-            svg.src = "../../assets/sidebarToggle.svg";
-        }
-        this._toggleButton.appendChild(svg);
-
+        this._toggleButton.innerHTML = "|||";
         if (this.sidebarPosition === "left") {
             this._sidebar.style.left = "0px";
             this._toggleButton.style.transform = "translateX(-50%)";

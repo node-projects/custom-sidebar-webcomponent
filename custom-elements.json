@@ -20,20 +20,6 @@
                         },
                         {
                             "kind": "property",
-                            "name": "sidebarBackgroundColor",
-                            "type": {
-                                "text": "string"
-                            }
-                        },
-                        {
-                            "kind": "property",
-                            "name": "toggleButtonBackgroundColor",
-                            "type": {
-                                "text": "string"
-                            }
-                        },
-                        {
-                            "kind": "property",
                             "name": "toggleButtonColor",
                             "type": {
                                 "text": "string"
@@ -60,20 +46,12 @@
                             "fieldName": "sidebarWidth"
                         },
                         {
-                            "name": "sidebar-background-color",
-                            "fieldName": "sidebarBackgroundColor"
-                        },
-                        {
-                            "name": "toggle-button-background-color",
-                            "fieldName": "toggleButtonBackgroundColor"
+                            "name": "sidebar-position",
+                            "fieldName": "sidebarPosition"
                         },
                         {
                             "name": "toggle-button-color",
                             "fieldName": "toggleButtonColor"
-                        },
-                        {
-                            "name": "sidebar-position",
-                            "fieldName": "sidebarPosition"
                         },
                         {
                             "name": "sidebar-toggle-button-top-position",
